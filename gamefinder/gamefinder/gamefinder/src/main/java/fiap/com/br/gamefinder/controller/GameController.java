@@ -18,13 +18,11 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 @RequiredArgsConstructor
 public class GameController {
 
-    // AGORA INJETAMOS O SERVICE, NÃO MAIS O REPOSITORY!
     private final GameService gameService;
     private final PagedResourcesAssembler<Game> pagedResourcesAssembler;
 
     @GetMapping("/{id}")
     public ResponseEntity<EntityModel<Game>> getById(@PathVariable Long id) {
-        // Chama o Service em vez do Repository
         Game game = gameService.getById(id);
 
         EntityModel<Game> resource = EntityModel.of(game);
@@ -53,7 +51,6 @@ public class GameController {
 
     @GetMapping
     public ResponseEntity<PagedModel<EntityModel<Game>>> getAll(Pageable pageable) {
-        // Chama o Service
         Page<Game> games = gameService.getAll(pageable);
 
         PagedModel<EntityModel<Game>> pagedModel = pagedResourcesAssembler.toModel(games, game -> {
@@ -67,7 +64,6 @@ public class GameController {
 
     @GetMapping("/genres/{genreId}")
     public ResponseEntity<PagedModel<EntityModel<Game>>> getByGenre(@PathVariable Long genreId, Pageable pageable) {
-        // Chama o Service
         Page<Game> games = gameService.getByGenre(genreId, pageable);
 
         PagedModel<EntityModel<Game>> pagedModel = pagedResourcesAssembler.toModel(games, game -> {
@@ -81,7 +77,6 @@ public class GameController {
 
     @GetMapping("/platforms/{platformId}")
     public ResponseEntity<PagedModel<EntityModel<Game>>> getByPlatform(@PathVariable Long platformId, Pageable pageable) {
-        // Chama o Service
         Page<Game> games = gameService.getByPlatform(platformId, pageable);
 
         PagedModel<EntityModel<Game>> pagedModel = pagedResourcesAssembler.toModel(games, game -> {
@@ -95,7 +90,6 @@ public class GameController {
 
     @GetMapping("/wishlist/{id}")
     public ResponseEntity<String> removeFromWishlist(@PathVariable Long id) {
-        // Chama o Service para simular a remoção
         gameService.removeFromWishlist(id);
         return ResponseEntity.ok("Removido da wishlist com sucesso!");
     }
