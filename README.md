@@ -55,5 +55,5 @@ Diferente de uma API simples, esta implementação fornece links dinâmicos no c
 ---
 
 ### Autor
-**João Pedro Pereira Camilo** *RM 562005* *Estudante de Análise e Desenvolvimento de Sistemas - FIAP*
-**Pamella Christiny Chaves Brito** *RM 565206* *Estudante de Análise e Desenvolvimento de Sistemas - FIAP*
+**João Pedro Pereira Camilo** **RM 562005** *Estudante de Análise e Desenvolvimento de Sistemas - FIAP*
+**Pamella Christiny Chaves Brito** **RM 565206** *Estudante de Análise e Desenvolvimento de Sistemas - FIAP*
