@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class GamefinderApplication {
 
     public static void main(String[] args) {
-        // Garantindo que a aplicação use o contexto correto
         SpringApplication.run(GamefinderApplication.class, args);
     }
 
