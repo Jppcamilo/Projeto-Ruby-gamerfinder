@@ -33,10 +33,8 @@ public class GameService {
     }
 
     public void removeFromWishlist(Long id) {
-        // Como é só uma simulação para o HATEOAS, apenas validamos se existe
         if (!repository.existsById(id)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Jogo não encontrado");
         }
-        // Aqui iria a lógica real de atualizar o banco (game.setInWishlist(false))
     }
 }
